@@ -62,7 +62,7 @@ typedef enum led_strip_backend
  * The queue handles only wse_led_hsv_t values
  */
 extern QueueHandle_t onboard_led_queue;
-extern led_strip_handle_t onboard_led_handle;
+
 
 
 /**

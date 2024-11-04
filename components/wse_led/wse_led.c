@@ -18,7 +18,7 @@
 #include "wse_color_table.h"
 
 QueueHandle_t onboard_led_queue = NULL;
-led_strip_handle_t onboard_led_handle = NULL;
+static led_strip_handle_t onboard_led_handle = NULL;
 
 // MARK: wse_onboard_led_config
 /**
