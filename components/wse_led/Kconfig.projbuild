@@ -1,0 +1,53 @@
+menu "WSE onboard LED Configuration"
+
+    orsource "$IDF_PATH/examples/common_components/env_caps/$IDF_TARGET/Kconfig.env_caps"
+
+
+
+    choice WSE_LED_STRIP_TYPE
+        prompt "LED strip type SK6812/WS2812"
+        default WSE_LED_STRIP_WS2812
+        help
+            Select the type of LED in the strip. It must be one of
+            rgb WS2812 or the newer rgbw SK6812
+        config WSE_LED_STRIP_TYPE_WS2812
+            bool "WS2812"
+        config WSE_LED_STRIP_TYPE_SK6812
+            bool "SK6812"
+    endchoice
+    
+
+    choice WSE_LED_STRIP_BACKEND
+        prompt "LED strip backend peripheral"
+        default WSE_LED_STRIP_BACKEND_RMT if SOC_RMT_SUPPORTED
+        default WSE_LED_STRIP_BACKEND_SPI
+        help
+            Select the backend peripheral to drive the LED strip.
+            RMT is easier and uses less resources
+            SPI is better for long strings of LEDs
+        config WSE_LED_STRIP_BACKEND_RMT
+            depends on SOC_RMT_SUPPORTED
+            bool "RMT"
+        config WSE_LED_STRIP_BACKEND_SPI
+            bool "SPI"
+    endchoice
+    
+
+    config WSE_LED_STRIP_GPIO
+        int "Led Strip GPIO number"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+        default 48
+        help
+            GPIO number (IOxx) to blink on and off the LED.
+            Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.
+
+            
+    config WSE_LED_STRIP_LENGTH
+        int "length of led strip to be driven"
+        range 1 1000
+        default 1
+        help
+            number of LEDs in the string of addressable LEDs.
+            For onboard LED only, the number is 1.
+            
+endmenu

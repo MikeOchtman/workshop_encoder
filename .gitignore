@@ -1,0 +1,5 @@
+# all the files and folders git should not include in repositories.
+
+build/
+managed_components/
+sdkconfig.d*
