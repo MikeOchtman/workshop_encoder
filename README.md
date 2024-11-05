@@ -8,7 +8,7 @@ This is a private project you are welcome to follow along with.
 
 ## Advanced esp-idf CMake and user-developed components
 The project is structured to use user-defined components to break the project up into logical sections.
-We are using esp-idf recommended compunent structure, i.e.
+We are using esp-idf recommended component structure, i.e.
 ${WorkspaceFolder}/components
                     -----| component-name
                           -------| include
