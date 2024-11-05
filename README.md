@@ -23,6 +23,8 @@ ${WorkspaceFolder}/components
                           ...
 
 ```
+## Managed Components from the esp-idf component registry
+We are drawing on led_strip and lvgl libraries, esp-idf keeps them separate in 'managed components' folder.
 ## Full error checking
 We do not use the ubiquitous 'ESP_ERROR_CHECK()' macro.
 We do proper error checking and graceful error recoveries
