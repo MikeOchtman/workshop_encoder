@@ -31,9 +31,9 @@ We do proper error checking and graceful error recoveries
 
 ### Hardware Required
 
-An ESP32-S3 board with integrated WS2812 addressable LED
-A KY-040 rotary dial
-A 24V interface board to read 24V HTL A/!A B/!B N/!N signals from the encoder under test
-A display. We are using I2C SSD1306 128x64  
+1. An ESP32-S3 board with integrated WS2812 addressable LED
+2. A KY-040 rotary dial
+3. A 24V interface board to read 24V HTL A/!A B/!B N/!N signals from the encoder under test
+4. A display. We are using I2C SSD1306 128x64  
 
 ### Configure the Project
