@@ -9,19 +9,20 @@ This is a private project you are welcome to follow along with.
 ## Advanced esp-idf CMake and user-developed components
 The project is structured to use user-defined components to break the project up into logical sections.
 We are using esp-idf recommended component structure, i.e.
-${WorkspaceFolder}/components\n
-                    -----| component-name\n
-                          -------| include\n
-                                   component-name.h\n
-                                   other.h\n
-                                   another.h\n
-                          CMakeLists.txt\n
-                          Kconfig.projbuild\n
-                          source1.c\n
-                          source2.c\n
-                          ...\n
-\n
+```
+${WorkspaceFolder}/components
+                    -----| component-name
+                          -------| include
+                                   component-name.h
+                                   other.h
+                                   another.h
+                          CMakeLists.txt
+                          Kconfig.projbuild
+                          source1.c
+                          source2.c
+                          ...
 
+```
 ## Full error checking
 We do not use the ubiquitous 'ESP_ERROR_CHECK()' macro.
 We do proper error checking and graceful error recoveries
